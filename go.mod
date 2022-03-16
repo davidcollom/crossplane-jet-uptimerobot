@@ -1,4 +1,4 @@
-module github.com/crossplane-contrib/provider-jet-uptimerobot
+module github.com/davidcollom/crossplane-jet-uptimerobot
 
 go 1.17
 

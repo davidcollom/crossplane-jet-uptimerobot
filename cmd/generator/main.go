@@ -25,7 +25,7 @@ import (
 
 	"github.com/crossplane/terrajet/pkg/pipeline"
 
-	"github.com/crossplane-contrib/provider-jet-uptimerobot/config"
+	"github.com/davidcollom/crossplane-jet-uptimerobot/config"
 )
 
 func main() {

@@ -21,10 +21,10 @@ import (
 
 	"github.com/crossplane/terrajet/pkg/controller"
 
-	contact "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/alert/contact"
-	providerconfig "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/providerconfig"
-	page "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/status/page"
-	monitor "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/uptimerobot/monitor"
+	contact "github.com/davidcollom/crossplane-jet-uptimerobot/internal/controller/alert/contact"
+	providerconfig "github.com/davidcollom/crossplane-jet-uptimerobot/internal/controller/providerconfig"
+	page "github.com/davidcollom/crossplane-jet-uptimerobot/internal/controller/status/page"
+	monitor "github.com/davidcollom/crossplane-jet-uptimerobot/internal/controller/uptimerobot/monitor"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to

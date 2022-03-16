@@ -33,10 +33,10 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/crossplane-contrib/provider-jet-uptimerobot/apis"
-	"github.com/crossplane-contrib/provider-jet-uptimerobot/config"
-	"github.com/crossplane-contrib/provider-jet-uptimerobot/internal/clients"
-	"github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller"
+	"github.com/davidcollom/crossplane-jet-uptimerobot/apis"
+	"github.com/davidcollom/crossplane-jet-uptimerobot/config"
+	"github.com/davidcollom/crossplane-jet-uptimerobot/internal/clients"
+	"github.com/davidcollom/crossplane-jet-uptimerobot/internal/controller"
 )
 
 func main() {

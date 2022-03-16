@@ -22,10 +22,10 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/crossplane-contrib/provider-jet-uptimerobot/apis/alert/v1alpha1"
-	v1alpha1status "github.com/crossplane-contrib/provider-jet-uptimerobot/apis/status/v1alpha1"
-	v1alpha1uptimerobot "github.com/crossplane-contrib/provider-jet-uptimerobot/apis/uptimerobot/v1alpha1"
-	v1alpha1apis "github.com/crossplane-contrib/provider-jet-uptimerobot/apis/v1alpha1"
+	v1alpha1 "github.com/davidcollom/crossplane-jet-uptimerobot/apis/alert/v1alpha1"
+	v1alpha1status "github.com/davidcollom/crossplane-jet-uptimerobot/apis/status/v1alpha1"
+	v1alpha1uptimerobot "github.com/davidcollom/crossplane-jet-uptimerobot/apis/uptimerobot/v1alpha1"
+	v1alpha1apis "github.com/davidcollom/crossplane-jet-uptimerobot/apis/v1alpha1"
 )
 
 func init() {

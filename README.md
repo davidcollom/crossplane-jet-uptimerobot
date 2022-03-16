@@ -2,18 +2,18 @@
 
 `provider-jet-uptimerobot` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Terrajet](https://github.com/crossplane/terrajet) code
-generation tools and exposes XRM-conformant managed resources for the 
+generation tools and exposes XRM-conformant managed resources for the
 Uptimerobot API.
 
 ## Getting Started
 
 Install the provider by using the following command after changing the image tag
-to the [latest release](https://github.com/crossplane-contrib/provider-jet-uptimerobot/releases):
+to the [latest release](https://github.com/davidcollom/crossplane-jet-uptimerobot/releases):
 ```
 kubectl crossplane install provider crossplane/provider-jet-uptimerobot:v0.1.0
 ```
 
-You can see the API reference [here](https://doc.crds.dev/github.com/crossplane-contrib/provider-jet-uptimerobot).
+You can see the API reference [here](https://doc.crds.dev/github.com/davidcollom/crossplane-jet-uptimerobot).
 
 ## Developing
 
@@ -55,7 +55,7 @@ make build
 ## Report a Bug
 
 For filing bugs, suggesting improvements, or requesting new features, please
-open an [issue](https://github.com/crossplane-contrib/provider-jet-uptimerobot/issues).
+open an [issue](https://github.com/davidcollom/crossplane-jet-uptimerobot/issues).
 
 ## Contact
 
