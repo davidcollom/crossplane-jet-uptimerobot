@@ -9,7 +9,7 @@ export TERRAFORM_VERSION := 1.1.7
 export TERRAFORM_PROVIDER_SOURCE := louy/uptimerobot
 export TERRAFORM_PROVIDER_VERSION := 0.5.1
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-uptimerobot
-export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://registry.terraform.io/louy/uptimerobot/0.5.1/
+export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX := https://github.com/louy/terraform-provider-uptimerobot/releases/download/v0.5.1/
 
 PLATFORMS ?= linux_amd64 linux_arm64
 
