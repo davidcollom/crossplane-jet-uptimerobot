@@ -5,14 +5,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: providerconfigusages.template.jet.crossplane.io
+  name: providerconfigusages.uptimerobot.jet.crossplane.io
 spec:
-  group: template.jet.crossplane.io
+  group: uptimerobot.jet.crossplane.io
   names:
     categories:
     - crossplane
     - provider
-    - templatejet
+    - uptimerobotjet
     kind: ProviderConfigUsage
     listKind: ProviderConfigUsageList
     plural: providerconfigusages

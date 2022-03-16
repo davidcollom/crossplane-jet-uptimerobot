@@ -25,62 +25,69 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type ResourceObservation struct {
+type ContactObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
+
+	Status *string `json:"status,omitempty" tf:"status,omitempty"`
 }
 
-type ResourceParameters struct {
+type ContactParameters struct {
 
-	// A map of arbitrary strings that, when changed, will force the null resource to be replaced, re-running any associated provisioners.
-	// +kubebuilder:validation:Optional
-	Triggers map[string]*string `json:"triggers,omitempty" tf:"triggers,omitempty"`
+	// +kubebuilder:validation:Required
+	FriendlyName *string `json:"friendlyName" tf:"friendly_name,omitempty"`
+
+	// +kubebuilder:validation:Required
+	Type *string `json:"type" tf:"type,omitempty"`
+
+	// +kubebuilder:validation:Required
+	Value *string `json:"value" tf:"value,omitempty"`
 }
 
-// ResourceSpec defines the desired state of Resource
-type ResourceSpec struct {
+// ContactSpec defines the desired state of Contact
+type ContactSpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     ResourceParameters `json:"forProvider"`
+	ForProvider     ContactParameters `json:"forProvider"`
 }
 
-// ResourceStatus defines the observed state of Resource.
-type ResourceStatus struct {
+// ContactStatus defines the observed state of Contact.
+type ContactStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        ResourceObservation `json:"atProvider,omitempty"`
+	AtProvider        ContactObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// Resource is the Schema for the Resources API
+// Contact is the Schema for the Contacts API
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,uptimerobotjet}
-type Resource struct {
+type Contact struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              ResourceSpec   `json:"spec"`
-	Status            ResourceStatus `json:"status,omitempty"`
+	Spec              ContactSpec   `json:"spec"`
+	Status            ContactStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// ResourceList contains a list of Resources
-type ResourceList struct {
+// ContactList contains a list of Contacts
+type ContactList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Resource `json:"items"`
+	Items           []Contact `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	Resource_Kind             = "Resource"
-	Resource_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: Resource_Kind}.String()
-	Resource_KindAPIVersion   = Resource_Kind + "." + CRDGroupVersion.String()
-	Resource_GroupVersionKind = CRDGroupVersion.WithKind(Resource_Kind)
+	Contact_Kind             = "Contact"
+	Contact_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: Contact_Kind}.String()
+	Contact_KindAPIVersion   = Contact_Kind + "." + CRDGroupVersion.String()
+	Contact_GroupVersionKind = CRDGroupVersion.WithKind(Contact_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&Resource{}, &ResourceList{})
+	SchemeBuilder.Register(&Contact{}, &ContactList{})
 }

@@ -25,8 +25,8 @@ import (
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "uptimerobot"
+	modulePath     = "github.com/crossplane-contrib/provider-jet-uptimerobot"
 )
 
 //go:embed schema.json

@@ -21,16 +21,20 @@ import (
 
 	"github.com/crossplane/terrajet/pkg/controller"
 
-	resource "github.com/crossplane-contrib/provider-jet-template/internal/controller/null/resource"
-	providerconfig "github.com/crossplane-contrib/provider-jet-template/internal/controller/providerconfig"
+	contact "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/alert/contact"
+	providerconfig "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/providerconfig"
+	page "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/status/page"
+	monitor "github.com/crossplane-contrib/provider-jet-uptimerobot/internal/controller/uptimerobot/monitor"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		contact.Setup,
 		providerconfig.Setup,
+		page.Setup,
+		monitor.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err
