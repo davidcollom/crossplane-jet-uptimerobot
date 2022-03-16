@@ -31,13 +31,10 @@ import (
 )
 
 const (
-	keyUsername = "username"
-	keyPassword = "password"
-	keyHost     = "host"
+	keyAPIKey = "api_key"
 
 	// Uptimerobot credentials environment variable names
-	envUsername = "HASHICUPS_USERNAME"
-	envPassword = "HASHICUPS_PASSWORD"
+	envAPIKey = "UPTIMEROBOT_API_KEY"
 )
 
 const (
@@ -86,14 +83,9 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
 		}
 
-		// set provider configuration
-		ps.Configuration = map[string]interface{}{
-			"host": uptimerobotCreds[keyHost],
-		}
 		// set environment variables for sensitive provider configuration
 		ps.Env = []string{
-			fmt.Sprintf(fmtEnvVar, envUsername, uptimerobotCreds[keyUsername]),
-			fmt.Sprintf(fmtEnvVar, envPassword, uptimerobotCreds[keyPassword]),
+			fmt.Sprintf(fmtEnvVar, envAPIKey, uptimerobotCreds[keyAPIKey]),
 		}
 		return ps, nil
 	}

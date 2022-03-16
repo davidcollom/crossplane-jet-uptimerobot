@@ -50,7 +50,7 @@ GO111MODULE = on
 # ====================================================================================
 # Setup Images
 
-DOCKER_REGISTRY ?= crossplane
+DOCKER_REGISTRY ?= davidcollom
 IMAGES = provider-jet-uptimerobot provider-jet-uptimerobot-controller
 -include build/makelib/image.mk
 
